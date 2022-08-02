@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml  # 配置文件格式
+        namespace: 5d030425-9052-4692-8808-ea7465ddf0bd
+  application:
+    name: service-sta
