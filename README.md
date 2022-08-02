@@ -47,7 +47,7 @@ B2B2C（商家到商家到用户)
 
 后端接口源码（包含数据库、学习笔记）：https://github.com/XueZhengXiang/college_of_education/tree/master
 
-前端页面和后端页面源码：https://gitee.com/StarSea007/vscode2020
+前端页面和后端页面源码：https://github.com/XueZhengXiang/vue_college_of_education/tree/master
 
 education-vue-admin：后端的前台页面
 education-vue-web：前端的前台页面
