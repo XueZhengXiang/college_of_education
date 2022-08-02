@@ -1,0 +1,36 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: service-msm #服务名
+  profiles:
+    active: dev #服务环境
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    password: xzq12345
+    host: 47.107.116.102
+    port: 6379
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatis日志
+mybatis-plus:
+  mapper-locations: classpath:com/xiangge/educms/mapper/xml/*.xml
+
+
+
+
+
+
+
+
+
+
+
+
