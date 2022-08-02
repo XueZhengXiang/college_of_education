@@ -1,0 +1,20 @@
+server:
+  port: 8009
+spring:
+  application:
+    name: service-acl
+  datasource:
+    password: 12345
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli?characterEncoding=utf-8&useSSL=false
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    password: xzq12345
+    host: 47.107.116.102
+    port: 6379
+mybatis-plus:
+  mapper-locations: classpath:com/xiangge/eduacl/mapper/xml/*.xml
