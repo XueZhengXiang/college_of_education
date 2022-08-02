@@ -1,0 +1,70 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: service-gatway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+         #整合security做登录
+        - id: service-acl
+          uri: lb://service-acl
+          predicates:
+            - Path=/*/acl/**
+
+          #1、前端轮播图
+        - id: service-cms
+          uri: lb://service-cms
+          predicates:
+            - Path=/eudcms/**
+
+          #2、课程模块
+        - id: service-edu
+          uri: lb://service-edu
+          predicates:
+            - Path=/eduservice/**
+
+            #3、短信登录模块
+        - id: service-msm
+          uri: lb://service-msm
+          predicates:
+            - Path=/edumsm/**
+
+        #4、订单模块
+        - id: service-order
+          uri: lb://service-order
+          predicates:
+            - Path=/eduorder/**
+
+        #5、封面，头像阿里云存储
+        - id: service-oss
+          uri: lb://service-oss
+          predicates:
+            - Path=/eduoss/**
+
+        #6、后台统计用户模块
+        - id: service-sta
+          uri: lb://service-sta
+          predicates:
+            - Path=/edusta/**
+
+        #7、用户手机号、微信登录
+        - id: service-ucenter
+          uri: lb://service-ucenter
+          predicates:
+            - Path=/educenter/**
+            - Path=/api/**
+
+          #8、阿里云视频上传
+        - id: service-vod
+          uri: lb://service-vod
+          predicates:
+            - Path=/eduvod/**
+
+
